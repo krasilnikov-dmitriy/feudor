@@ -1,0 +1,9 @@
+<h2>Message History</h2>
+<ul *ngIf="chatSelected">
+  <li *ngFor="let message of messages">
+    {{message.message}}
+    <p>From: {{message.sender}}</p>
+  </li>
+</ul>
+<input type="text" id="message" content="message" placeholder="message" >
+<button (onClick)="Send(message)">Send</button>

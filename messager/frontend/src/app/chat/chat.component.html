@@ -1,0 +1,18 @@
+
+<div>
+<ul class="chats">
+    <li *ngFor="let chat of chatList" 
+      [class.selected]="chat === selectedChat"
+      (click)="onSelect(chat)"> 
+      {{chat.name}}
+    </li>
+  </ul>
+  <button type="button" class="btn btn-info" (onClick)="openModal(newChat)">new chat</button> 
+</div>
+
+<ng-template #newChat>
+    <div class="modal-body">
+      <input [(ngModel)]="newName" placeholder=" name of the new chat ">
+      <button (click)="modalRef.hide()"></button>
+    </div>
+</ng-template>
